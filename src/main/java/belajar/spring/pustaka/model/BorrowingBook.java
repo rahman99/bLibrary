@@ -31,6 +31,7 @@ public class BorrowingBook {
 	private Member idMember;
 	
 	private Date borrowingDate;
+	private boolean isReturn;
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="idBorrowing")
 	private Set<ReversionBook> mborrowing = new HashSet<ReversionBook>();
@@ -65,5 +66,13 @@ public class BorrowingBook {
 
 	public void setBorrowingDate(Date borrowingDate) {
 		this.borrowingDate = borrowingDate;
+	}
+
+	public boolean isReturn() {
+		return isReturn;
+	}
+
+	public void setReturn(boolean isReturn) {
+		this.isReturn = isReturn;
 	}
 }

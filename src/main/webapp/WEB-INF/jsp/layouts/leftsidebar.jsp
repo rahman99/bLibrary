@@ -25,9 +25,9 @@
 			</c:forEach>
 			 --%>
 			<li><a href="userLogin">Administrator</a></li>
-			<li><a href="Books">Book</a>
+			<li><a href="listBooks">Book</a>
 			</li>
-			<li><a href="Members">User</a>
+			<li><a href="Members">Member</a>
 			</li>
 			<li><a href="#">Peminjaman</a>
 			</li>

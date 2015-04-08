@@ -23,12 +23,14 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
-	@RequestMapping(value = "/Books", method = RequestMethod.GET)
+	@RequestMapping(value = "/listBooks", method = RequestMethod.GET)
 	public ModelAndView handleBookRequest() throws Exception {
 		logger.debug("/listBooks executed");
 		List<Book> listBooks = bookService.listBook();
-		ModelAndView model = new ModelAndView("book/BookList");
+//		ModelAndView model = new ModelAndView("book/BookList");
+		ModelAndView model = new ModelAndView("book/BookList2"); //tambahan
 		model.addObject("bookList", listBooks);
+		model.addObject("book", new Book()); //tambahan
 		return model;
 	}
 	
@@ -37,7 +39,7 @@ public class BookController {
 		logger.debug("/newBook executed");
 		ModelAndView model = new ModelAndView("book/BookForm");
 		model.addObject("book", new Book());
-		return model;		
+		return model;
 	}
 	
 	@RequestMapping(value = "/saveBook", method = RequestMethod.POST)
@@ -57,10 +59,10 @@ public class BookController {
 		return model;		
 	}
 	
-	@RequestMapping(value = "/deleteBook", method = RequestMethod.GET)
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public ModelAndView deleteBook(@ModelAttribute Book book) {
 		logger.debug("/deleteBook executed");
 		bookService.delete(book);
-		return new ModelAndView("redirect:/Books");		
+		return new ModelAndView("redirect:/listBooks");		
 	}
 }

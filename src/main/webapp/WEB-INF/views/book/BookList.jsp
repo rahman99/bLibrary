@@ -30,7 +30,7 @@
 					<td>${book.description}</td>
 					<td>
 						<a href="${pageContext.request.contextPath}/editBook?id=${book.id}">Edit &nbsp;&nbsp;&nbsp;&nbsp;</a>
-						<a href="${pageContext.request.contextPath}/deleteBook?id=${book.id}">Delete &nbsp;&nbsp;&nbsp;&nbsp;</a>
+						<a href="${pageContext.request.contextPath}/delete?id=${book.id}">Delete &nbsp;&nbsp;&nbsp;&nbsp;</a>
 					</td>
 	        	</tr>
 				</c:forEach>	        	

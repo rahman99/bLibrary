@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import belajar.spring.pustaka.dao.BorrowingDao;
+import belajar.spring.pustaka.dao.BorrowingBookDao;
 import belajar.spring.pustaka.model.BorrowingBook;
 
 @Repository
-public class BorrowingDaoImpl implements BorrowingDao{
+public class BorrowingBookDaoImpl extends BaseDaoImpl<BorrowingBook> implements BorrowingBookDao{
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -23,26 +23,6 @@ public class BorrowingDaoImpl implements BorrowingDao{
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-	}
-
-	@Transactional
-	public List<BorrowingBook> listBorrow() {
-		@SuppressWarnings("unchecked")
-		List<BorrowingBook> list = (List<BorrowingBook>) sessionFactory.getCurrentSession()
-				.createCriteria(BorrowingBook.class);
-		return list;
-	}
-
-	@Transactional
-	public void saveOrUpdate(BorrowingBook borrowingBook) {
-		sessionFactory.getCurrentSession().saveOrUpdate(borrowingBook);
-	}
-
-	@Transactional
-	public void delete(int id) {
-		BorrowingBook borrowing=new BorrowingBook();
-		borrowing.setId(id);
-		sessionFactory.getCurrentSession().delete(borrowing);
 	}
 
 	@Transactional
@@ -59,9 +39,17 @@ public class BorrowingDaoImpl implements BorrowingDao{
 		return null;
 	}
 
-	@Override
-	public BorrowingBook getBookofMember(int idMember) {
-//		String hql = "from BorrowingBook where"
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public BorrowingBook getBookBorrowingByMember(int idMember) {
+		String hql = "from BorrowingBook where isReturn = false and idMember = "+idMember;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		if(query!=null && query.list().size() > 0) {
+			List<BorrowingBook> list = (List<BorrowingBook>) query.list();
+			if(list != null && !list.isEmpty()){
+				return list.get(0);
+			}
+		}
 		return null;
 	}
 

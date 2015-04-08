@@ -10,6 +10,7 @@
 	<!-- Service beans -->
 
 	<bean id="bookService" class="belajar.spring.pustaka.service.impl.BookServiceImpl"></bean>
+	<bean id="bookserviceRest" class="belajar.spring.pustaka.service.impl.BookServiceImpl"></bean>
 	<bean id="memberService" class="belajar.spring.pustaka.service.impl.MemberServiceImpl"></bean>
 	
 	<!-- DAO beans -->

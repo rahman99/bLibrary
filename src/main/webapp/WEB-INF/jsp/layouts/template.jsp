@@ -19,10 +19,10 @@
 <meta name="author" content="">
 <title>Sample Demo bootstrap</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-<link href="css/sb-admin-2.css" rel="stylesheet">
-<link href="font-awesome-4.1.0/css/font-awesome.min.css"
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+<link href="bootstrap/css/sb-admin-2.css" rel="stylesheet">
+<link href="bootstrap/font-awesome-4.1.0/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 </head>
 
@@ -54,16 +54,16 @@
 	<!-- /#wrapper -->
 
 	<!-- jQuery Version 1.11.0 -->
-	<script src="js/jquery-1.11.0.js"></script>
+	<script src="bootstrap/js/jquery-1.11.0.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Metis Menu Plugin JavaScript -->
-	<script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+	<script src="bootstrap/js/plugins/metisMenu/metisMenu.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-	<script src="js/sb-admin-2.js"></script>
+	<script src="bootstrap/js/sb-admin-2.js"></script>
 
 </body>
 </html>
