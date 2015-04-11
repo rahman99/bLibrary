@@ -50,4 +50,9 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		sessionFactory.getCurrentSession().delete(entity);
 	}
 
+	@Override
+	public void save(T entity) {
+		sessionFactory.getCurrentSession().save(entity);
+	}
+
 }

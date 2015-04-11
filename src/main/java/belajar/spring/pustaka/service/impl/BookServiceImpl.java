@@ -48,4 +48,9 @@ public class BookServiceImpl implements BookService{
 		return bookDao.getByISBN(isbn);
 	}
 
+	@Override
+	public void save(Book book) {
+		bookDao.save(book);
+	}
+
 }

@@ -81,10 +81,10 @@ th {
 				src='<c:url value="resources/js2/lib/jquery-ui-1.10.4.custom.js"/>'></script>
 			<script type="text/javascript"
 				src='<c:url value="resources/js2/lib/jquery.ui.datepicker.js"/>'></script>
-			<%-- <script type="text/javascript"
-				src='<c:url value="js2/js-for-listBooks.js"/>'></script>
-			 --%>
-			 <script src="resources/js2/js-for-listBooks.js"></script>
+			<script type="text/javascript"
+				src='<c:url value="resources/js2/js-for-listBooks.js"/>'></script>
+			
+			 <!-- <script src="resources/js2/js-for-listBooks.js"></script> -->
 		</tiles:putAttribute>
 	</tiles:insertDefinition>
 </body>

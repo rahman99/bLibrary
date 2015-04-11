@@ -56,7 +56,7 @@ public class BookController {
 		Book book = bookService.getById(bookId);
 		ModelAndView model = new ModelAndView("book/BookForm");
 		model.addObject("book", book);
-		return model;		
+		return model;
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)

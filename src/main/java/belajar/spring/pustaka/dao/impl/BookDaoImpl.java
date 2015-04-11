@@ -3,6 +3,7 @@ package belajar.spring.pustaka.dao.impl;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,7 +28,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao{
 	}
 
 	public Book getById(int id) {
-		String hql = "from Book where id=" + id;
+		/*String hql = "from Book where id=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -37,7 +38,10 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao{
 			return listBook.get(0);
 		}
 		
-		return null;
+		return null;*/
+		Session session = sessionFactory.getCurrentSession();
+		Book book=(Book) session.get(Book.class, id);
+		return book;
 	}
 
 	public Book getByISBN(String isbn) {

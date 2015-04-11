@@ -32,14 +32,15 @@ public class BookRestfullTest {
 	}
 	
 	private static void testSaveBook(){
-		RestTemplate restTemplate = new RestTemplate();
+//		RestTemplate restTemplate = new RestTemplate();
 		Book book = new Book();
 		book.setDescription("testBuku");
 		book.setIsbn("999819");
 		book.setPublisher("andi publisher");
 		book.setTitle("testing book");
-		Book responseBook = restTemplate.postForObject(server_url+"savebook.json", book, Book.class);
-		System.out.println("ID "+responseBook.getId()+" book : "+responseBook.getTitle());
+//		Book responseBook = restTemplate.postForObject(server_url+"savebook.json", book, Book.class);
+		
+//		System.out.println("ID "+responseBook.getId()+" book : "+responseBook.getTitle());
 	}
 
 }
